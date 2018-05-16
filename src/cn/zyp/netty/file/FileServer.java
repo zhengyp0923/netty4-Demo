@@ -14,7 +14,7 @@ import java.io.File;
 import java.io.RandomAccessFile;
 
 /**
- * netty  文件传输
+ * netty  文件传输服务器
  */
 public class FileServer {
     private static final String CR = System.getProperty("line.separator");
