@@ -26,8 +26,10 @@ public class SubReqClient {
 					.handler(new ChannelInitializer<SocketChannel>() {
 						@Override
 						protected void initChannel(SocketChannel ch) throws Exception {
+							//解码器
 							ch.pipeline().addLast(new ObjectDecoder(1024,
 									ClassResolvers.cacheDisabled(this.getClass().getClassLoader())));
+							//编码器
 							ch.pipeline().addLast(new ObjectEncoder());
 							ch.pipeline().addLast(new ChannelInboundHandlerAdapter() {
 								@Override
